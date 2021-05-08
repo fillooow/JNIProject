@@ -8,6 +8,11 @@ import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
+    init {
+
+        System.loadLibrary("native-lib")
+    }
+
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
@@ -15,9 +20,6 @@ class MainActivity : AppCompatActivity() {
     external fun Jniint(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        System.loadLibrary("native-lib") // fixme: куда вынести можно
-
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
