@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
-    external fun Jniint(): Int
+    external fun randomize(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -25,12 +25,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val tv = findViewById<TextView>(R.id.onlyYou)
-        tv.text = "erev0s.com"
+        tv.text = "sometext"
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "JNI random number: ${Jniint()}", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "JNI random number: ${randomize()}", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
 
